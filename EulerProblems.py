@@ -8,7 +8,7 @@ for integer in range(1000): # for loop which will cycle through every number UND
         sum += integer # add number to total sum
 print(sum)
 
-# COMPLETE
+# COMPLETE : 233168
 
 
 # PROBLEM 2
@@ -29,4 +29,56 @@ while term_limit:
                 term_limit = False # set term_limit to false once term limit is reached (stops while loop)
 print('evens total: ', evens_sum)
 
-# COMPLETE
+# COMPLETE : 4613732
+
+
+# PROBLEM 3
+# The prime factors of 13195 are 5, 7, 13 and 29. What is the largest prime factor of the number 600851475143?
+
+from primePy import primes # using primePy library might try to get another solution to work without it
+
+last_num = 1
+gatekeeper = 0
+def recursive_prime_factoring(the_number):
+    global last_num
+    global gatekeeper
+    for integer in range(last_num + 1, int(the_number + 1)):
+            if gatekeeper == 0:
+                for i in range(2, int(integer/2)+1):
+                    if gatekeeper == 0: 
+                        if (integer % i) == 0:
+                                break
+                    else:
+                         break
+                else:
+                    last_num = integer
+                    if the_number%integer == 0:
+                        the_number = the_number/integer
+                        static_num = the_number*integer 
+                        if gatekeeper == 0: 
+                            if primes.check(the_number):
+                                if the_number == 1:
+                                    print(static_num, "is its own highest prime factor")
+                                    gatekeeper=1
+                                    break   
+                                else:
+                                    print(the_number, "is the highest prime factor")
+                                    gatekeeper=1
+                                    break   
+                            else:
+                                last_num = 1
+                                recursive_prime_factoring(the_number)
+                        else:
+                            break    
+                    else:
+                        recursive_prime_factoring(the_number)
+recursive_prime_factoring(600851475143)
+
+# a much simpler solution using primePy
+
+from primePy import primes
+
+high_prime_factor = max(primes.factors(600851475143))
+print(high_prime_factor)
+
+# COMPLETE : 6857
