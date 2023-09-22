@@ -134,6 +134,7 @@ print(num2)
 
 # COMPLETE : 232792560
 
+
 # PROBLEM 6
 # Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
@@ -150,3 +151,30 @@ diff = sum1 - sum
 print(diff)
 
 # COMPLETE : 25164150
+
+
+# PROBLEM 7
+# By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13. 
+# What is the 10,001st prime number?
+list = [1, 2, 3]
+integer = 2
+print(list.index(integer))
+
+prime_list = []
+for integer in range(2, 9999999):
+        if len(prime_list) < 10001:
+            for i in range(2, int(integer/2)+1):
+                if (integer % i) == 0:
+                    break
+            else:
+                prime_list.append(integer)
+        else:
+             print(prime_list[-1])
+             break
+
+# Easy solution with primePy
+from primePy import primes
+list = primes.first(10001)
+print(list[-1])
+
+# COMPLETE : 104743
