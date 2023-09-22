@@ -116,3 +116,37 @@ for p in p_list:
 print("Largest palindrome:",last_p)
 
 # COMPLETE : 906609
+
+
+# PROBLEM 5
+# 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+# What is the smallest positive number that is evenly divisible with no remainder by all of the numbers from 1 to 20?
+
+num1 = 0
+num2 = 2520 # any number divisible by 1 - 20 must be divisible by 2520
+while num1 != 20:
+    num1 = 0
+    num2 += 2520
+    for i in range(1,21):
+        if num2 % i == 0:
+            num1 += 1
+print(num2)
+
+# COMPLETE : 232792560
+
+# PROBLEM 6
+# Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+
+sum = 0
+sum1 = 0
+def square(x):
+     return x*x
+for number in range(1,101):
+     sum1 += number
+     math = square(number)
+     sum += math
+sum1 = square(sum1)
+diff = sum1 - sum
+print(diff)
+
+# COMPLETE : 25164150
