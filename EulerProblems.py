@@ -226,3 +226,27 @@ for sum in sum_list:
 print(last_sum)
 
 # COMPLETE : 23514624000
+
+
+# PROBLEM 9
+# A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,a^2 + b^2 = c^2. For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2.
+# There exists exactly one Pythagorean triplet for which a + b + c = 1000.Find the product abc.
+x = 1000
+for nu in range(x):
+    c = nu
+    r = x - c
+    if r<c:
+        for num in range(int(0.5*r+1),r):
+            b = num
+            a = x - (num + c)
+            if (a*a) + (b*b) == (c*c):
+                print(a,'*',b,'*',c,'=',a*b*c)
+                break
+    else:
+        for numb in range(int(0.5*c+1),c):
+            b = numb
+            a = x - (numb + c)
+            if (a*a) + (b*b) == (c*c):
+                print(a,'*',b,'*',c,'=',a*b*c)
+                break
+# COMPLETE : 31875000
