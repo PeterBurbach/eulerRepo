@@ -249,4 +249,16 @@ for nu in range(x):
             if (a*a) + (b*b) == (c*c):
                 print(a,'*',b,'*',c,'=',a*b*c)
                 break
+
 # COMPLETE : 31875000
+
+
+# PROBLEM 10
+# The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17. Find the sum of all the primes below two million.
+
+from primePy import primes
+a = prime_list.upto(2000000)
+sum = sum(a)
+print(sum)
+
+# COMPLETE : 142913828922
